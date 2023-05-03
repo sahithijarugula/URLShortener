@@ -1,4 +1,6 @@
 class UrlShortenerController < ApplicationController
+  #Creates a short URL for the URL the user inputs and stores it in 
+  #the UrlShortener database, renders a json as its endpoint
   def encode
     if params[:submit_button]
       @long_url = params[:input_long]
@@ -23,7 +25,9 @@ class UrlShortenerController < ApplicationController
       render json: @url, only: [:long, :short]
     end
   end
-
+  
+  #Finds the original long URL of the given short URL if it 
+  #exists in the UrlShortener database, renders a json as its endpoint
   def decode
     if params[:submit_button]
       @short_url = params[:input_short]
