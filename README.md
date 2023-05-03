@@ -1,5 +1,5 @@
-# URLShortener
-URLShortener program by Sahithi Jarugula.
+# URL Shortener
+URL Shortener program by Sahithi Jarugula.
 
 ## How to Run
 The URLShortenerProgram is a ruby on rails program. If you copy this repository
