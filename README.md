@@ -13,3 +13,9 @@ There are three pages in this program, the index page (the home page), the encod
 page and the decode page.
 
 ### Index Page
+The Index page is the home page of the program. On this page the user is given the 
+choice whether to encode (shorten the URL they provide) or decode (find the original 
+long URL of the short URL they provie) a url. The html code behind it can be reached
+through this path: URLShortenerProgram/app/views/url_shortener/index.html.erb. 
+
+## Encode Page
