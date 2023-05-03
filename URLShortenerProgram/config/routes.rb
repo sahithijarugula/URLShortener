@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "url_shortener#encode"
-  get "/url_shortener", to: "url_shortener#encode"
-  get "/url_shortener/final1", to: "url_shortener#final_encode"
+  get "/url_shortener", to: "url_shortener#encode", as: "encode_page"
+  get "/url_shortener/final1", to: "url_shortener#final_encode", as: "final_encode_page"
 end

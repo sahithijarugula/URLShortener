@@ -11,3 +11,161 @@ Migrating to CreateUrlShorteners (20230503183839)
   [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-05-03 18:39:17.263337"], ["updated_at", "2023-05-03 18:39:17.263337"]]
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-05-03 14:53:28 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-05-03 14:53:28 -0400
+Processing by UrlShortenerController#encode as HTML
+Processing by UrlShortenerController#encode as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 5447)
+
+
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 7605)
+
+
+  
+NameError (uninitialized constant UrlShortenerController::Url
+Did you mean?  URI):
+  
+app/controllers/url_shortener_controller.rb:15:in `block in encode'
+app/controllers/url_shortener_controller.rb:5:in `loop'
+app/controllers/url_shortener_controller.rb:5:in `encode'
+  
+NameError (uninitialized constant UrlShortenerController::Url
+Did you mean?  URI):
+  
+app/controllers/url_shortener_controller.rb:15:in `block in encode'
+app/controllers/url_shortener_controller.rb:5:in `loop'
+app/controllers/url_shortener_controller.rb:5:in `encode'
+Started GET "/" for 127.0.0.1 at 2023-05-03 14:59:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/sahithijarugula/URLShortenerProgram/app/controllers/url_shortener_controller.rb:34: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/url_shortener_controller.rb:34: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/url_shortener_controller.rb:34: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/url_shortener_controller.rb:34: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for 127.0.0.1 at 2023-05-03 15:00:43 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UrlShortenerController#encode as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering url_shortener/encode.html.erb within layouts/application
+  Rendered url_shortener/encode.html.erb within layouts/application (Duration: 9.1ms | Allocations: 5356)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5441)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 10872)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `encode_page_path' for #<ActionView::Base:0x0000000000a9d8>):
+    1: <h1>URL Shortener</h1>
+    2: 
+    3: <%= form_with url: encode_page_path, method: "get" do |form| %>
+    4:   <p>
+    5:     <%= label_tag :url, "Insert URL" %><br>
+    6:     <%= text_field_tag :input_long %>
+  
+app/views/url_shortener/encode.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-05-03 15:00:44 -0400
+Processing by UrlShortenerController#encode as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering url_shortener/encode.html.erb within layouts/application
+  Rendered url_shortener/encode.html.erb within layouts/application (Duration: 24.8ms | Allocations: 4075)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 4147)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms | Allocations: 4443)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `encode_page_path' for #<ActionView::Base:0x0000000000acf8>):
+    1: <h1>URL Shortener</h1>
+    2: 
+    3: <%= form_with url: encode_page_path, method: "get" do |form| %>
+    4:   <p>
+    5:     <%= label_tag :url, "Insert URL" %><br>
+    6:     <%= text_field_tag :input_long %>
+  
+app/views/url_shortener/encode.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-05-03 15:00:44 -0400
+Processing by UrlShortenerController#encode as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering url_shortener/encode.html.erb within layouts/application
+  Rendered url_shortener/encode.html.erb within layouts/application (Duration: 14.8ms | Allocations: 4072)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 4143)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 4433)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `encode_page_path' for #<ActionView::Base:0x0000000000afc8>):
+    1: <h1>URL Shortener</h1>
+    2: 
+    3: <%= form_with url: encode_page_path, method: "get" do |form| %>
+    4:   <p>
+    5:     <%= label_tag :url, "Insert URL" %><br>
+    6:     <%= text_field_tag :input_long %>
+  
+app/views/url_shortener/encode.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-05-03 15:03:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UrlShortenerController#encode as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering url_shortener/encode.html.erb within layouts/application
+  Rendered url_shortener/encode.html.erb within layouts/application (Duration: 0.5ms | Allocations: 845)
+  Rendered layout layouts/application.html.erb (Duration: 134.2ms | Allocations: 97542)
+Completed 200 OK in 138ms (Views: 135.4ms | ActiveRecord: 0.0ms | Allocations: 103026)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-03 15:08:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UrlShortenerController#encode as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering url_shortener/encode.html.erb within layouts/application
+  Rendered url_shortener/encode.html.erb within layouts/application (Duration: 0.5ms | Allocations: 845)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 35444)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 40928)
+
+
+Started GET "/url_shortener?input_long=https%3A%2F%2Fwww.nytimes.com%2F&submit_button=" for 127.0.0.1 at 2023-05-03 15:08:42 -0400
+Processing by UrlShortenerController#encode as HTML
+  Parameters: {"input_long"=>"https://www.nytimes.com/", "submit_button"=>""}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2374)
+
+
+  
+NameError (uninitialized constant UrlShortenerController::Url
+Did you mean?  URI):
+  
+app/controllers/url_shortener_controller.rb:19:in `block in encode'
+app/controllers/url_shortener_controller.rb:9:in `loop'
+app/controllers/url_shortener_controller.rb:9:in `encode'
+Started GET "/" for 127.0.0.1 at 2023-05-03 15:11:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UrlShortenerController#encode as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering url_shortener/encode.html.erb within layouts/application
+  Rendered url_shortener/encode.html.erb within layouts/application (Duration: 0.5ms | Allocations: 845)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 35931)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 41415)
+
+
+Started GET "/url_shortener?input_long=https%3A%2F%2Fwww.nytimes.com%2F&submit_button=" for 127.0.0.1 at 2023-05-03 15:11:54 -0400
+Processing by UrlShortenerController#encode as HTML
+  Parameters: {"input_long"=>"https://www.nytimes.com/", "submit_button"=>""}
+  [1m[36mUrlShortener Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "url_shorteners" WHERE "url_shorteners"."short" = ? LIMIT ?[0m  [["short", "https://short.est/1NwH"], ["LIMIT", 1]]
+  ↳ app/controllers/url_shortener_controller.rb:19:in `block in encode'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/url_shortener_controller.rb:24:in `encode'
+  [1m[36mUrlShortener Create (0.5ms)[0m  [1m[32mINSERT INTO "url_shorteners" ("long", "short", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["long", "https://www.nytimes.com/"], ["short", "https://short.est/1NwH"], ["created_at", "2023-05-03 19:11:54.702682"], ["updated_at", "2023-05-03 19:11:54.702682"]]
+  ↳ app/controllers/url_shortener_controller.rb:24:in `encode'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/url_shortener_controller.rb:24:in `encode'
+Redirected to http://127.0.0.1:3000/url_shortener/final1
+Completed 302 Found in 25ms (ActiveRecord: 3.0ms | Allocations: 21319)
+
+
+Started GET "/url_shortener/final1" for 127.0.0.1 at 2023-05-03 15:11:54 -0400
+Processing by UrlShortenerController#final_encode as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering url_shortener/final_encode.html.erb within layouts/application
+  Rendered url_shortener/final_encode.html.erb within layouts/application (Duration: 0.9ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2598)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 2980)
+
+

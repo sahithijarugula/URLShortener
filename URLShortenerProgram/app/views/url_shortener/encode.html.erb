@@ -1,11 +1,11 @@
 <h1>URL Shortener</h1>
 
-<%= form_with url: encode_page_path, method: "post" do |form| %>
+<%= form_with url: encode_page_path, method: "get" do |form| %>
   <p>
-    <%= form.label :input_url %><br>
-    <%= form.text_field :input_long %>
+    <%= label_tag :url, "Insert URL" %><br>
+    <%= text_field_tag :input_long %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= button_tag "Submit", name: "submit_button" %>
   </p>
 <% end %>
