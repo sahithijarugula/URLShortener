@@ -2,4 +2,4 @@
 URLShortener assignment for Yello Summer 2023 Internship Position
 
 # How to Run
-The URL
+The URLShortenerProgram is a ruby on rails program.
