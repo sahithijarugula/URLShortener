@@ -32,4 +32,21 @@ class UrlShortenerController < ApplicationController
     @short_url = @@short
     @long_url = @@long
   end
+
+  def decode
+    if params[:submit_button]
+      @short_url = params[:input_short]
+      @long_url = UrlShortener.where(short: @short_url).pluck(:long)
+      if @long_url.empty?
+        puts "short url does not exist. Please try again."
+      end
+      @@long = @long_url
+      redirect_to final_decode_page_path
+    end
+  end
+
+  def final_decode
+    @long_url = @@long[0]
+  end
+
 end

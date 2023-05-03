@@ -1,0 +1,12 @@
+<h1>Get Original URL</h1>
+
+<%= form_with url: decode_page_path, method: "get" do |form| %>
+  <p>
+    <%= label_tag :url, "Insert URL" %><br>
+    <%= text_field_tag :input_short %>
+  </p>
+  <p>
+    <%= button_tag "Submit", name: "submit_button" %>
+  </p>
+<% end %>
+
