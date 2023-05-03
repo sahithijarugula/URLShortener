@@ -266,3 +266,66 @@ Processing by UrlShortenerController#final_decode as HTML
 Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 2959)
 
 
+Started GET "/" for 127.0.0.1 at 2023-05-03 15:35:48 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UrlShortenerController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering url_shortener/index.html.erb within layouts/application
+  Rendered url_shortener/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 687)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 36052)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 40507)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-03 15:35:49 -0400
+Processing by UrlShortenerController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering url_shortener/index.html.erb within layouts/application
+  Rendered url_shortener/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2595)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 2910)
+
+
+Started GET "/url_shortener/encode" for 127.0.0.1 at 2023-05-03 15:35:51 -0400
+Processing by UrlShortenerController#encode as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering url_shortener/encode.html.erb within layouts/application
+  Rendered url_shortener/encode.html.erb within layouts/application (Duration: 1.8ms | Allocations: 489)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2908)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3296)
+
+
+Started GET "/url_shortener/encode?input_long=https%3A%2F%2Fwww.washingtonpost.com%2Fweather%2F&submit_button=" for 127.0.0.1 at 2023-05-03 15:35:56 -0400
+Processing by UrlShortenerController#encode as HTML
+  Parameters: {"input_long"=>"https://www.washingtonpost.com/weather/", "submit_button"=>""}
+  [1m[36mUrlShortener Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "url_shorteners" WHERE "url_shorteners"."short" = ? LIMIT ?[0m  [["short", "https://short.est/2Y6S"], ["LIMIT", 1]]
+  ↳ app/controllers/url_shortener_controller.rb:16:in `block in encode'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/url_shortener_controller.rb:21:in `encode'
+  [1m[36mUrlShortener Create (0.6ms)[0m  [1m[32mINSERT INTO "url_shorteners" ("long", "short", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["long", "https://www.washingtonpost.com/weather/"], ["short", "https://short.est/2Y6S"], ["created_at", "2023-05-03 19:35:56.054637"], ["updated_at", "2023-05-03 19:35:56.054637"]]
+  ↳ app/controllers/url_shortener_controller.rb:21:in `encode'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/url_shortener_controller.rb:21:in `encode'
+  [1m[36mUrlShortener Load (0.2ms)[0m  [1m[34mSELECT "url_shorteners".* FROM "url_shorteners" WHERE "url_shorteners"."long" = ?[0m  [["long", "https://www.washingtonpost.com/weather/"]]
+  ↳ app/controllers/url_shortener_controller.rb:23:in `encode'
+Completed 200 OK in 38ms (Views: 14.3ms | ActiveRecord: 2.6ms | Allocations: 21979)
+
+
+Started GET "/url_shortener/decode" for 127.0.0.1 at 2023-05-03 15:36:43 -0400
+Processing by UrlShortenerController#decode as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering url_shortener/decode.html.erb within layouts/application
+  Rendered url_shortener/decode.html.erb within layouts/application (Duration: 1.6ms | Allocations: 422)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2864)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3247)
+
+
+Started GET "/url_shortener/decode?input_short=https%3A%2F%2Fshort.est%2F2xDp&submit_button=" for 127.0.0.1 at 2023-05-03 15:36:46 -0400
+Processing by UrlShortenerController#decode as HTML
+  Parameters: {"input_short"=>"https://short.est/2xDp", "submit_button"=>""}
+  [1m[36mUrlShortener Pluck (0.2ms)[0m  [1m[34mSELECT "url_shorteners"."long" FROM "url_shorteners" WHERE "url_shorteners"."short" = ?[0m  [["short", "https://short.est/2xDp"]]
+  ↳ app/controllers/url_shortener_controller.rb:30:in `decode'
+  [1m[36mUrlShortener Load (0.1ms)[0m  [1m[34mSELECT "url_shorteners".* FROM "url_shorteners" WHERE "url_shorteners"."long" = ?[0m  [["long", "https://www.washingtonpost.com/"]]
+  ↳ app/controllers/url_shortener_controller.rb:36:in `decode'
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 1330)
+
+
