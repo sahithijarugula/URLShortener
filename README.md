@@ -9,3 +9,7 @@ installed). This will give a link (of the form http://217.0.0.1:3000). If you
 paste this link into a web browser, you will be able to see the program.
 
 ## Document Details
+There are three pages in this program, the index page (the home page), the encode
+page and the decode page.
+
+### Index Page
